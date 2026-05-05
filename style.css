@@ -57,6 +57,26 @@ body {
     transition: background-color 0.2s;
 }
 
+.sss-toggle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: 1px solid var(--input-border);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.sss-toggle:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
 .theme-toggle:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
