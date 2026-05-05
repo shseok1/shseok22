@@ -1,14 +1,23 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 저녁 뭐 먹지?</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <div class="container">
+        <h1>진석이에게 저녁 추천하기</h1>
+        <p>진석이가 먹었으면 하는 메뉴를 입력해주세요!</p>
+        <form id="suggestion-form">
+            <input type="text" id="menu-input" placeholder="예: 위스키, 생맥주, 막스베르스타펜..." required>
+            <button type="submit">추천하기</button>
+        </form>
+        <div id="result-message" class="hidden">
+            <p>감사합니다! <span id="suggested-menu"></span> (을)를 저녁 메뉴로 고려해볼게요! 😋</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
