@@ -8,11 +8,10 @@
 </head>
 <body>
     <div class="container">
-        <button id="theme-toggle" class="theme-toggle" aria-label="다크 모드 전환">🌓</button>
         <h1>진석이에게 저녁 추천하기</h1>
         <p>진석이가 먹었으면 하는 메뉴를 입력해주세요!</p>
         <form id="suggestion-form" action="https://formspree.io/f/xeengpdd" method="POST">
-            <input type="text" name="suggested_menu" id="menu-input" placeholder="예: 위스키, 생맥주, 막스베르스타펜..." required>
+            <input type="text" name="suggested_menu" id="menu-input" placeholder="메뉴를 입력해주세요" required>
             <button type="submit">추천하기</button>
         </form>
         <div id="result-message" class="hidden">

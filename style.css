@@ -10,16 +10,6 @@
     --result-text: #0056b3;
 }
 
-[data-theme="dark"] {
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --text-primary: #f0f2f5;
-    --text-secondary: #b0b0b0;
-    --input-border: #333;
-    --result-bg: #1a2a3a;
-    --result-text: #66b2ff;
-}
-
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     background-color: var(--bg-color);
@@ -29,7 +19,6 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -41,28 +30,6 @@ body {
     width: 100%;
     max-width: 400px;
     position: relative;
-    transition: background-color 0.3s;
-}
-
-.theme-toggle {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 50%;
-    transition: background-color 0.2s;
-}
-
-.theme-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="dark"] .theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 h1 {
@@ -89,14 +56,13 @@ input {
     outline: none;
     background-color: var(--card-bg);
     color: var(--text-primary);
-    transition: border-color 0.2s, background-color 0.3s, color 0.3s;
 }
 
 input:focus {
     border-color: var(--accent-color);
 }
 
-button[type="submit"] {
+button {
     padding: 12px;
     background-color: var(--accent-color);
     color: white;
@@ -107,7 +73,7 @@ button[type="submit"] {
     transition: background-color 0.2s;
 }
 
-button[type="submit"]:hover {
+button:hover {
     background-color: var(--accent-hover);
 }
 
@@ -122,5 +88,29 @@ button[type="submit"]:hover {
     border-radius: 8px;
     color: var(--result-text);
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
+}
+
+.divider {
+    border-bottom: 1px solid var(--input-border);
+    margin: 2rem 0;
+}
+
+#random-menu-button {
+    background-color: #28a745;
+}
+
+#random-menu-button:hover {
+    background-color: #218838;
+}
+
+#random-menu-result {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+#random-menu {
+    font-weight: bold;
+    color: var(--accent-color);
 }

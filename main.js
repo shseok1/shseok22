@@ -1,22 +1,4 @@
-// 다크 모드 전환 로직
-const themeToggle = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-}
-
-themeToggle.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-});
-
+// 메뉴 추천 로직
 const suggestionForm = document.getElementById('suggestion-form');
 const resultMessage = document.getElementById('result-message');
 const suggestedMenuSpan = document.getElementById('suggested-menu');
@@ -42,7 +24,6 @@ suggestionForm.addEventListener('submit', async function(e) {
                 suggestedMenuSpan.textContent = menu;
                 resultMessage.classList.remove('hidden');
                 input.value = "";
-                // 5초 후 메시지 숨기기 (선택 사항)
                 setTimeout(() => {
                     resultMessage.classList.add('hidden');
                 }, 5000);
@@ -53,4 +34,20 @@ suggestionForm.addEventListener('submit', async function(e) {
             alert("연결 오류가 발생했습니다.");
         }
     }
+});
+
+// 랜덤 메뉴 추천 로직
+const randomMenuButton = document.getElementById('random-menu-button');
+const randomMenuResult = document.getElementById('random-menu-result');
+
+const dinnerMenus = [
+    "치킨", "피자", "파스타", "스테이크", "초밥", "라멘", "햄버거", "타코", "김치찌개", "된장찌개", "부대찌개", "곱창", "삼겹살", "불고기", "비빔밥", "떡볶이"
+];
+
+randomMenuButton.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
+    const selectedMenu = dinnerMenus[randomIndex];
+    
+    randomMenuResult.textContent = `오늘의 추천 메뉴는... ${selectedMenu} 입니다! 🎉`;
+    randomMenuResult.classList.remove('hidden');
 });
